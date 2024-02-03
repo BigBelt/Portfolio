@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "Skin Scan - AI and ML to prevent and detect Melanoma."
+title: "Skin Scan - AI & ML"
 description: "The background regarding my Skin Scan project."
 pubDate: 2023-02-2
 category: "intro"
