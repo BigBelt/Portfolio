@@ -10,15 +10,13 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarco.xyz/",
+  site: "https://danieljreynolds.com",
   integrations: [sitemap(), robotsTxt({
-    sitemap: ["https://gianmarco.xyz/sitemap-index.xml", "https://gianmarco.xyz/sitemap-0.xml"]
+    sitemap: ["https://danieljreynolds.com/sitemap-index.xml", "https://danieljreynolds.com/sitemap-0.xml"]
   }), solidJs(), UnoCSS({
     injectReset: true
   }), icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime]
   },
-  output: "server",
-  adapter: vercel()
 });
