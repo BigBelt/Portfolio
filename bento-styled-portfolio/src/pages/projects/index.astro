@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card/index.astro";
+---
+
+<script>
+  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../../lib/constants";
+  const cards = document.querySelectorAll(".card");
+
+  const sequence = [
+    loaderAnimation,
+    [
+      cards,
+      { y: ["40%", "0%"], opacity: [0, 1] },
+      {
+        at: "-0.1",
+        duration: 0.4,
+        delay: stagger(0.3),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+      },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<Layout
+  title="Daniel Reynolds - Portfolio Site"
+  description="Aspiring Cybersecurity Professional"
+>
+  <main
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+  >
+     <Card 
+     colSpan="md:col-span-5" 
+     rowSpan="md:row-span-2"
+     title="Skin Scan"
+     href="/blog/skinscan">
+      <p class="text-md">
+        > a proof of concept application, exploring how ML and AI can be used in medical applications.
+      </p>
+       <p class="text-md">
+        > built with tensor flow, ollama, and anvil.
+      </p>
+    </Card>
+
+    <Card 
+     colSpan="md:col-span-5" 
+     rowSpan="md:row-span-2"
+     title="Skill Sharpen"
+      href="">
+      <p class="text-md">
+        > using ai to accelerate learning, through direct instruction and feedback
+      </p>
+      <p class="text-md">
+        > coming soon
+      </p>
+    </Card>
+        
+    <Card 
+     colSpan="md:col-span-5" 
+     rowSpan="md:row-span-2"
+     title="VoltMC"
+      href="https://voltmc.net">
+      <p class="text-md">
+        > a next generation minecraft server experience
+      </p>
+    </Card>
+
+    <Card colSpan="md:col-span-4" rowSpan="md:row-span-1">
+      <p class="text-xs">
+        © 2023 · Crafted with ♥️ using <a
+          href="https://astro.build/"
+          target="_blank"
+          class="text-red-500">Astro</a
+        > by Daniel Reynolds.
+      </p>
+    </Card>
+
+    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+      <p class="text-xs">
+      <a
+      href="/"
+      > Back
+        
+      </p>
+    </Card>
+  </main>
+</Layout>
